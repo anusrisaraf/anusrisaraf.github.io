@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Story Title - Anusri Saraf</title>
+        <link rel="stylesheet" href="/styles.css">
+
+    <link rel="icon" type="image/x-icon" href="../../images/favicon2.ico">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/11.1.1/marked.min.js"></script>
+    </head>
+    <body>
+        <div class="bubble3 mobile-bubble"></div>
+    <div class="bubbles">
+        <div class="bubble bubble-1"></div>
+        <div class="bubble bubble-2"></div>
+        <div class="bubble bubble-3"></div>
+        <div class="bubble bubble-4"></div>
+        <div class="bubble bubble-5"></div>
+        <div class="bubble bubble-6"></div>
+        <div class="bubble bubble-7"></div>
+        <div class="bubble2 bubble-8"></div>
+        <div class="bubble2 bubble-9"></div>
+        <div class="bubble2 bubble-10"></div>
+        <div class="bubble2 bubble-11"></div>
+        <div class="bubble2 bubble-12"></div>
+    </div>
+        <header>
+            <nav class="story-nav">
+                <a href="/" class="nav-link">home</a> <b>⋅</b>
+                <a href="/writing" class="nav-link">writing</a>
+            </nav>
+        </header>
+
+        <main>
+            <article class="story">
+                <header class="story-header">
+                    <h1 class="story-title"></h1>
+                    <span class="section-subtitle year"></span>
+                </header>
+                <div class="story-content"></div>
+            </article>
+        </main>
+
+        <footer>
+            <div class="social-links">
+                <a href="https://instagram.com/anusrisaraf" target="_blank" rel="noopener noreferrer">instagram</a>
+                <a href="https://linkedin.com/in/anusri-saraf" target="_blank" rel="noopener noreferrer">linkedin</a>
+                <a href="mailto:srisar@mit.edu" target="_blank" rel="noopener noreferrer">srisar [at] mit [dot] edu</a>
+            </div>
+        </footer>
+
+        <script>
+            // Function to get story slug from URL
+            function getStorySlug() {
+                const path = window.location.pathname;
+                return path.split('/').pop().replace('.html', '');
+            }
+
+            // Function to load and render markdown content
+            async function loadStory() {
+                const slug = getStorySlug();
+                try {
+                    const response = await fetch(`/writing/stories/${slug}.md`);
+                    const markdown = await response.text();
+                    
+                    // Parse frontmatter (assuming format: title: xxx\ndate: xxx\n---)
+                    const [_, frontmatter, content] = markdown.split('---');
+                    const metadata = Object.fromEntries(
+                        frontmatter.trim().split('\n')
+                            .map(line => line.split(': ').map(s => s.trim()))
+                    );
+
+                    // Update title and year
+                    document.title = `${metadata.title} - Anusri Saraf`;
+                    document.querySelector('.story-title').textContent = metadata.title;
+                    document.querySelector('.year').textContent = metadata.year;
+
+                    // Render markdown content
+                    const htmlContent = marked.parse(content.trim());
+                    document.querySelector('.story-content').innerHTML = htmlContent;
+                } catch (error) {
+                    console.error('Error loading story:', error);
+                    document.querySelector('.story-content').innerHTML = '<p>Story not found.</p>';
+                }
+            }
+
+            document.addEventListener('DOMContentLoaded', loadStory);
+        </script>
+
+        <script src="../../script.js"></script>
+    </body>
+</html>
