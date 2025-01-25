@@ -713,6 +713,28 @@ header {
     padding-bottom: 0.5rem;
 }
 
+.etc-title2 {
+    display: block;
+    font-family: 'Adobe Caslon Italic', serif;
+    font-style: italic;
+    color: var(--hover-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--secondary-text);
+    padding-bottom: 0.5rem;
+}
+
+.etc-title3 {
+    display: block;
+    font-family: 'Adobe Caslon Italic', serif;
+    font-style: italic;
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--secondary-text);
+    padding-bottom: 0.5rem;
+}
+
 .etc-item p {
     margin: 0.5rem 0;
     color: var(--text-color);
