@@ -255,7 +255,7 @@ h2 {
     gap: 1rem;
 }
 
-.social-links a {
+.social-links a, .social-links p {
     text-decoration: none;
     color: var(--text-color);
     font-size: 0.9rem;
