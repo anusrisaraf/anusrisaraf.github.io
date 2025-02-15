@@ -4,25 +4,25 @@ const stories = [
         title: "fading lights",
         date: "2020",
         excerpt: "The sun was setting, casting long shadows across the empty street. A gentle breeze rustled through...",
-        link: "/writing/stories/fading-lights"
+        link: "/writing/stories/fading-lights.html"
     },
     {
         title: "he loves me not",
         date: "2019",
         excerpt: "I remember the day I first saw him. He was sitting at his desk, completely absorbed in his work...",
-        link: "/writing/stories/he-loves-me-not"
+        link: "/writing/stories/he-loves-me-not.html"
     },
     {
         title: "my cup of chai",
         date: "2019",
         excerpt: "I grimace at the sound of my glasses scraping against the windowsill. I wash my face with cold water and look...",
-        link: "/writing/stories/my-cup-of-chai"
+        link: "/writing/stories/my-cup-of-chai.html"
     },
     {
         title: "the queen is dead",
         date: "2019",
         excerpt: "A boy dashed through the rain, holding his jacket above his head. \"I'm going to be late!\" He relaxed when he...",
-        link: "/writing/stories/the-queen-is-dead"
+        link: "/writing/stories/the-queen-is-dead.html"
     }
 ];
 
