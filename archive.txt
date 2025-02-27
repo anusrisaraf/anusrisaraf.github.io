@@ -6,27 +6,27 @@
     <title>sri saraf</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Enterprising MIT student fueled by a deep passion for computer science, cybersecurity, and a relentless pursuit of knowledge. Currently pursuing majors in Computer Science & Artificial Intelligence and Business Analytics, while exploring other fields with minors in Mathematics and Music.">
+    <meta name="description" content="Anusri (Sri) Saraf's personal website. MIT '26 student studying Computer Science, AI, Business Analytics, Mathematics, and Music. Full-stack developer, musician, and writer.">
     <meta name="keywords" content="Anusri Saraf, Sri Saraf, Anusri, Sri, Saraf, MIT, Computer Science, AI, Music, Full Stack Developer">
     <meta name="author" content="Anusri Saraf">
     
     <!-- Open Graph Meta Tags for social sharing -->
     <meta property="og:title" content="sri saraf">
-    <meta property="og:description" content="Enterprising MIT student fueled by a deep passion for computer science, cybersecurity, and a relentless pursuit of knowledge. Currently pursuing majors in Computer Science & Artificial Intelligence and Business Analytics, while exploring other fields with minors in Mathematics and Music.">
+    <meta property="og:description" content="MIT '26 student studying Computer Science, AI, Business Analytics, Mathematics, and Music. Full-stack developer, musician, and writer.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://sris.vercel.app">
+    <meta property="og:url" content="https://sites.mit.edu/srisar">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="sri saraf">
-    <meta name="twitter:description" content="Enterprising MIT student fueled by a deep passion for computer science, cybersecurity, and a relentless pursuit of knowledge. Currently pursuing majors in Computer Science & Artificial Intelligence and Business Analytics, while exploring other fields with minors in Mathematics and Music.">
+    <meta name="twitter:description" content="MIT '26 student studying Computer Science, AI, Business Analytics, Mathematics, and Music. Full-stack developer, musician, and writer.">
     
     <link rel="icon" type="image/x-icon" href="images/favicon2.ico">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -256,7 +256,7 @@ Beyond the realm of coding and digital defense, I find joy in the power of words
                         </p>
                     </a>
                     <div class="link-container">
-                        <a href="/writing" class="inline-link">see my anthology + more music →</a>
+                        <a href="https://srisar.vercel.app/writing" class="inline-link">see my anthology + more music →</a>
                     </div>
                 </div>
             </section>
@@ -270,9 +270,9 @@ Beyond the realm of coding and digital defense, I find joy in the power of words
                     <div class="etc-item">
                         <span class="etc-title">education</span>
                         <p>MIT '26</p>
-                        <p>computer science + artificial intelligence & business analytics</p>
+                        <p>computer science & artificial intelligence + business analytics</p>
                         <p>mathematics & music</p>
-                        <a href="/classes.html" class="inline-link">see my classes!</a>
+                        <a href="https://srisar.vercel.app/classes.html" class="inline-link">see my classes!</a>
                     </div>
                     <div class="etc-item">
                         <span class="etc-title">interests</span>
@@ -312,7 +312,57 @@ Beyond the realm of coding and digital defense, I find joy in the power of words
             </div>
         </footer>
     </div>
+<script>document.addEventListener('DOMContentLoaded', () => {
+    // No hover effects needed - all handled by CSS
 
-    <script src="script.js"></script>
+    const bubbles = document.querySelectorAll('.bubble');
+    const bubble2Elements = document.querySelectorAll('.bubble2');
+    let scrollPosition = window.pageYOffset;
+    const scrollThreshold = 300; // When to start showing bubble2 elements
+
+    function parallaxScroll() {
+        const currentScroll = window.pageYOffset;
+        const scrollDiff = currentScroll - scrollPosition;
+        
+        // Handle regular bubbles parallax
+        bubbles.forEach((bubble, index) => {
+            const speed = 0.1 + (index * 0.05); // Different speeds for each bubble
+            const yOffset = -scrollDiff * speed;
+            const scale = Math.max(0.6, 1 - (currentScroll * 0.001));
+            
+            bubble.style.transform = `translateY(${yOffset}px) scale(${scale})`;
+        });
+
+        // Handle bubble2 visibility
+        if (currentScroll > scrollThreshold) {
+            bubble2Elements.forEach(bubble => {
+                bubble.classList.add('visible');
+            });
+        } else {
+            bubble2Elements.forEach(bubble => {
+                bubble.classList.remove('visible');
+            });
+        }
+
+        // Update scroll position
+        scrollPosition = currentScroll;
+    }
+
+    // Throttle scroll event for better performance
+    let ticking = false;
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                parallaxScroll();
+                ticking = false;
+            });
+            ticking = true;
+        }
+    });
+
+    // Initial check
+    parallaxScroll();
+});
+</script>
 </body>
 </html>
