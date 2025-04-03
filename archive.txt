@@ -217,7 +217,7 @@ Beyond the realm of coding and digital defense, I find joy in the power of words
                     creative writings, writings about music, and musical compositions and performance
                 </span>
                 <div class="projects">
-                    <a href="https://scalloped-quart-965.notion.site/Bridging-Cultures-How-88rising-Redefined-the-Global-Music-Scene-157f77527f798043bde9f731d44de900" target="_blank"  class="project-container alt">
+                    <a href="https://srisaraf.notion.site/Bridging-Cultures-How-88rising-Redefined-the-Global-Music-Scene-157f77527f798043bde9f731d44de900" target="_blank"  class="project-container alt">
                         <div class="project-link">
                             <span class="project-title">Bridging Cultures: How 88rising Redefined the Global Music Scene</span>
                             <span class="project-date">2024</span>
