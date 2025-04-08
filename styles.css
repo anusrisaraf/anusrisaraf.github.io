@@ -345,7 +345,7 @@ header h1 a {
 
 /* Single column for smaller screens */
 @media (max-width: 768px) {
-    #tech .projects {
+    #tech .projects, #music .projects {
         display: flex;
         flex-direction: column;
         gap: 1rem;
@@ -835,7 +835,7 @@ header {
 }
 
 .back {
-    color: var(--text-color);
+    color: var(--text-color)
 }
 
 /* Make navigation responsive */
