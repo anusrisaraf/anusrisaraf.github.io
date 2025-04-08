@@ -151,7 +151,6 @@ h2 {
     color: var(--hover-color-2);
 }
 
-
 .project-container:hover .project-link {
     border-bottom-color: var(--hover-color);
 }
@@ -750,5 +749,110 @@ header {
     
     .etc-item {
         padding: 1rem;
+    }
+}
+
+/* Subtle Navigation Styles */
+.subtle-nav {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 900;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.subtle-nav:hover,
+.subtle-nav.visible {
+    opacity: 1;
+}
+
+/* Hover detection area */
+.subtle-nav::before {
+    content: '';
+    position: absolute;
+    right: -20px;
+    top: -50px;
+    width: 60px;
+    height: calc(100% + 100px);
+    z-index: -1;
+}
+
+.nav-dots {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.nav-dots li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(200, 200, 200, 0.5);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.nav-dots li::before {
+    content: attr(title);
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    /* background-color: rgba(255, 255, 255, 0.7); */
+    backdrop-filter: blur(4px);
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-family: 'Adobe Caslon Italic', serif;
+    font-size: 16px;
+    font-style: italic;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.nav-dots li:hover {
+    background-color: var(--secondary-text)/*rgba(150, 150, 150, 0.8);*/
+}
+
+.nav-dots li:hover::before {
+    opacity: 1;
+}
+
+.nav-dots li.active {
+    background-color: var(--text-color);
+    /* color: var(--accent-color); */
+    /* transform: scale(1.2); */
+}
+
+.back {
+    color: var(--text-color);
+}
+
+/* Make navigation responsive */
+@media (max-width: 768px) {
+    .subtle-nav {
+        right: 10px;
+    }
+    
+    .nav-dots li {
+        width: 8px;
+        height: 8px;
+    }
+}
+
+/* Hide navigation when printing */
+@media print {
+    .subtle-nav {
+        display: none;
     }
 }
