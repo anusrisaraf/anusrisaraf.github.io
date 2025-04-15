@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Conway's Game of Life</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
+    <link rel="stylesheet" href="/projects/conway/style.css">
+</head>
+<body>
+    <div class="left-panel">
+    <h1>CONWAY'S GAME OF LIFE</h1>
+    
+    <div class="instructions">
+        <!-- <p><strong>Instructions:</strong></p> -->
+         <ul>
+            <li>Click and drag to draw living cells</li>
+            <li>Press the spacebar to pause/resume the simulation</li>
+            <li>You have no power to kill</li>
+        </ul>
+    </div>
+    
+    <div class="controls">
+        <div class="slider-container">
+            <label for="densitySlider">Cell Density:</label>
+            <input type="range" id="densitySlider" min="2" max="20" value="10" step="1">
+            <div class="slider-labels">
+                <!-- <span>Fewer, Larger Cells</span>
+                <span>More, Smaller Cells</span> -->
+            </div>
+        </div>
+        <div class="file-upload">
+            <label for="imageUpload">Upload an image to initialize grid:</label>
+            <input type="file" id="imageUpload" accept="image/*">
+            <img id="imagePreview" src="" alt="Preview">
+        </div>
+        <button id="resetBtn">Random Reset</button>
+        <button id="clearBtn">Clear Grid</button>
+    </div>
+</div>
+    <div class="right-panel">
+        <script src="/projects/conway/script.js"></script>
+    </div>
+</body>
+</html>
