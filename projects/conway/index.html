@@ -6,7 +6,7 @@
     
     <title>Conway's Game of Life</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.min.js"></script>
-    <link rel="stylesheet" href="/projects/conway/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="left-panel">
@@ -23,7 +23,7 @@
     
     <div class="controls">
         <div class="slider-container">
-            <label for="densitySlider">Cell Density:</label>
+            <label for="densitySlider">Cell Size:</label>
             <input type="range" id="densitySlider" min="2" max="20" value="10" step="1">
             <div class="slider-labels">
                 <!-- <span>Fewer, Larger Cells</span>
@@ -31,16 +31,20 @@
             </div>
         </div>
         <div class="file-upload">
-            <label for="imageUpload">Upload an image to initialize grid:</label>
-            <input type="file" id="imageUpload" accept="image/*">
-            <img id="imagePreview" src="" alt="Preview">
-        </div>
+    <label for="imageUpload">Upload an image to initialize grid:</label>
+    <div class="custom-file-upload">
+        <button type="button" id="customUploadBtn">Choose File</button>
+        <span id="fileName">No file chosen</span>
+        <input type="file" id="imageUpload" accept="image/*" style="display:none;">
+    </div>
+    <img id="imagePreview" src="" alt="Preview">
+</div>
         <button id="resetBtn">Random Reset</button>
         <button id="clearBtn">Clear Grid</button>
     </div>
 </div>
     <div class="right-panel">
-        <script src="/projects/conway/script.js"></script>
+        <script src="script.js"></script>
     </div>
 </body>
 </html>

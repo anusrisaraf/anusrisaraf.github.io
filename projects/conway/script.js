@@ -176,9 +176,24 @@ let cols, rows;
             });
             
             document.getElementById('imageUpload').addEventListener('change', function(event) {
+                // Update file name display
+                const fileNameSpan = document.getElementById('fileName');
+                if (this.files && this.files.length > 0) {
+                    fileNameSpan.textContent = this.files[0].name;
+                } else {
+                    fileNameSpan.textContent = 'No file chosen';
+                }
                 handleImageUpload(event);
                 this.blur();
             });
+
+            // Custom upload button triggers hidden file input
+            const customUploadBtn = document.getElementById('customUploadBtn');
+            if (customUploadBtn) {
+                customUploadBtn.addEventListener('click', function() {
+                    document.getElementById('imageUpload').click();
+                });
+            }
         }
 
         function updateGridSize(newCellSize) {

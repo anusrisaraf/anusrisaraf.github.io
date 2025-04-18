@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Cenios';
-    src: url('Cenios-Regular.otf') format('opentype');
+    src: url('/fonts/Cenios-Regular.otf') format('truetype');
 }
 :root {
     --primary-color: #e6d0b8;
@@ -12,7 +12,6 @@ body {
     display: flex;
     flex-direction: row;
     font-family: 'Cenios', sans-serif;
-    font-display: swap;
     background-color: var(--primary-color);
     min-height: 100vh;
     box-sizing: border-box;
@@ -79,6 +78,38 @@ button:hover {
     gap: 10px;
     margin-bottom: 10px;
 }
+
+.custom-file-upload {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#customUploadBtn {
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-family: 'Cenios', sans-serif;
+    transition: background 0.2s;
+}
+#customUploadBtn:hover {
+    background-color: #4e342e;
+}
+
+#fileName {
+    font-size: 14px;
+    color: var(--secondary-color);
+    font-family: 'Cenios', sans-serif;
+}
+
+#imageUpload {
+    display: none;
+}
+
 #imagePreview {
     max-width: 200px;
     max-height: 150px;
