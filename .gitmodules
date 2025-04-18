@@ -1,0 +1,3 @@
+[submodule "projects/conway"]
+	path = projects/conway
+	url = https://github.com/anusrisaraf/conway-2025
