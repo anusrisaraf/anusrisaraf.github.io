@@ -1,6 +1,3 @@
 [submodule "projects/conway"]
 	path = projects/conway
 	url = https://github.com/anusrisaraf/conway-2025
-[submodule "projects/visynth"]
-	path = projects/visynth
-	url = https://github.com/anusrisaraf/visynth
