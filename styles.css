@@ -338,7 +338,7 @@ header h1 a {
 }
 
 /* Two-column grid for tech section */
-#tech .projects, #music .projects {
+#tech .projects, #music .projects, #projects .projects {
     display: flex;
     flex-direction: column;
     display: grid;
