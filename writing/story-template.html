@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Story Title - Anusri Saraf</title>
+        <link rel="canonical" href="" />
         <link rel="stylesheet" href="/styles.css">
 
     <link rel="icon" type="image/x-icon" href="../../images/favicon2.ico">
@@ -59,6 +60,16 @@
         </footer>
 
         <script>
+            // Function to set the canonical URL
+            function setCanonicalUrl() {
+                const slug = getStorySlug();
+                const canonicalUrl = `https://www.mit.edu/~srisar/writing/stories/${slug}.html`;
+                const canonicalLink = document.querySelector('link[rel="canonical"]');
+                if (canonicalLink) {
+                    canonicalLink.href = canonicalUrl;
+                }
+            }
+
             // Function to get story slug from URL
             function getStorySlug() {
                 const path = window.location.pathname;
@@ -93,7 +104,10 @@
                 }
             }
 
-            document.addEventListener('DOMContentLoaded', loadStory);
+            document.addEventListener('DOMContentLoaded', () => {
+                setCanonicalUrl();
+                loadStory();
+            });
         </script>
 
         <script src="../../script.js"></script>
