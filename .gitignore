@@ -1,0 +1,32 @@
+.DS_Store
+Thumbs.db
+
+# Node / frontend tooling
+node_modules/
+dist/
+build/
+.cache/
+
+# Environment / secrets
+.env
+.env.local
+.env.*.local
+
+# Editors / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS / misc
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Static hosting / frameworks (harmless if unused)
+.next/
+.vercel/
+out/
+
+# Cursor / tooling
+.cursor/
