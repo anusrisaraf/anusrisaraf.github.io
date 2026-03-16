@@ -337,8 +337,8 @@ header h1 a {
     color: var(--text-color);
 }
 
-/* Two-column grid for tech section */
-#tech .projects, #music .projects, #projects .projects {
+/* Two-column grid for tech and arts sections */
+#tech .projects, #music .projects, #projects .projects, #writing .projects {
     display: flex;
     flex-direction: column;
     display: grid;
@@ -346,13 +346,17 @@ header h1 a {
     gap: 2rem;
 }
 
-#tech .project-container, #music .project-container {
+#tech .project-container, #music .project-container, #writing .project-container {
     flex: unset;
+}
+
+#writing .link-container {
+    grid-column: 1 / -1;
 }
 
 /* Single column for smaller screens */
 @media (max-width: 768px) {
-    #tech .projects, #music .projects {
+    #tech .projects, #music .projects, #writing .projects {
         display: flex;
         flex-direction: column;
         gap: 1rem;
