@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>fading lights</title>
+        <title>the queen is dead</title>
         <link rel="stylesheet" href="/styles.css">
 
     <link rel="icon" type="image/x-icon" href="../../images/favicon2.ico">
@@ -36,7 +36,7 @@
         <header>
             <nav class="story-nav">
                 <a href="/" class="nav-link">home</a> <b>⋅</b>
-                <a href="/writing" class="nav-link">writing</a>
+                <a href="/arts" class="nav-link">arts</a>
             </nav>
         </header>
 
@@ -70,7 +70,7 @@
             async function loadStory() {
                 const slug = getStorySlug();
                 try {
-                    const response = await fetch(`/writing/stories/${slug}.md`);
+                    const response = await fetch(`/arts/stories/${slug}.md`);
                     const markdown = await response.text();
                     
                     // Parse frontmatter (assuming format: title: xxx\ndate: xxx\n---)

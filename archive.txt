@@ -246,7 +246,7 @@ Beyond the realm of coding and digital defense, I find joy in the power of words
                         </p>
                     </a>
 
-                    <a href="/writing/stories/fading-lights.html" target="_blank" class="project-container">
+                    <a href="/arts/stories/fading-lights.html" target="_blank" class="project-container">
                         <div class="project-link">
                             <span class="project-title">fading lights</span>
                             <span class="project-date">2020</span>
@@ -256,7 +256,7 @@ Beyond the realm of coding and digital defense, I find joy in the power of words
                         </p>
                     </a>
                     <div class="link-container">
-                        <a href="https://srisar.vercel.app/writing" class="inline-link">see my anthology + more music →</a>
+                        <a href="https://srisar.vercel.app/arts" class="inline-link">see my anthology + more music →</a>
                     </div>
                 </div>
             </section>

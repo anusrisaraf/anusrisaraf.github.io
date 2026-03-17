@@ -3,8 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Story Title - Anusri Saraf</title>
-        <link rel="canonical" href="" />
+        <title>fading lights</title>
         <link rel="stylesheet" href="/styles.css">
 
     <link rel="icon" type="image/x-icon" href="../../images/favicon2.ico">
@@ -37,7 +36,7 @@
         <header>
             <nav class="story-nav">
                 <a href="/" class="nav-link">home</a> <b>⋅</b>
-                <a href="/writing" class="nav-link">writing</a>
+                <a href="/arts" class="nav-link">arts</a>
             </nav>
         </header>
 
@@ -56,20 +55,11 @@
                 <a href="https://instagram.com/anusrisaraf" target="_blank" rel="noopener noreferrer">instagram</a>
                 <a href="https://linkedin.com/in/anusri-saraf" target="_blank" rel="noopener noreferrer">linkedin</a>
                 <a href="mailto:srisar@mit.edu" target="_blank" rel="noopener noreferrer">srisar [at] mit [dot] edu</a>
+                <p>created by anusri saraf</p>
             </div>
         </footer>
 
         <script>
-            // Function to set the canonical URL
-            function setCanonicalUrl() {
-                const slug = getStorySlug();
-                const canonicalUrl = `https://www.mit.edu/~srisar/writing/stories/${slug}.html`;
-                const canonicalLink = document.querySelector('link[rel="canonical"]');
-                if (canonicalLink) {
-                    canonicalLink.href = canonicalUrl;
-                }
-            }
-
             // Function to get story slug from URL
             function getStorySlug() {
                 const path = window.location.pathname;
@@ -80,7 +70,7 @@
             async function loadStory() {
                 const slug = getStorySlug();
                 try {
-                    const response = await fetch(`/writing/stories/${slug}.md`);
+                    const response = await fetch(`/arts/stories/${slug}.md`);
                     const markdown = await response.text();
                     
                     // Parse frontmatter (assuming format: title: xxx\ndate: xxx\n---)
@@ -104,10 +94,7 @@
                 }
             }
 
-            document.addEventListener('DOMContentLoaded', () => {
-                setCanonicalUrl();
-                loadStory();
-            });
+            document.addEventListener('DOMContentLoaded', loadStory);
         </script>
 
         <script src="../../script.js"></script>
