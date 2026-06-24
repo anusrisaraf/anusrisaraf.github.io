@@ -65,7 +65,7 @@
     }
     </script>
 </head>
-<body>
+<body class="home">
 
     <div class="bubble3 mobile-bubble"></div>
     <div class="bubbles">
@@ -86,10 +86,7 @@
     
 
     <div class="container">
-        <header>
-            <h1>sri saraf</h1>
-    </header>
-    <div class="subtle-nav">
+        <!-- <div class="subtle-nav">
         <div class="nav-indicator"></div>
         <ul class="nav-dots">
             <li data-section="bio" class="active" title="about"></li>
@@ -100,14 +97,32 @@
             
             <li data-section="etc" title="etc"></li>
         </ul>
-    </div>
+    </div> -->
+        <aside class="home-section-rail" aria-label="sections">
+            <nav class="section-rail-labels">
+                <button type="button" class="section-rail-label active" data-section="bio">about</button>
+                <button type="button" class="section-rail-label" data-section="research">research</button>
+                <button type="button" class="section-rail-label" data-section="tech">tech</button>
+                <button type="button" class="section-rail-label" data-section="writing">arts</button>
+                <button type="button" class="section-rail-label" data-section="business">business</button>
+                <button type="button" class="section-rail-label" data-section="etc">etc</button>
+            </nav>
+        </aside>
         <main>
-            <section id="bio" class="section" >
-                <p>
-                    Enterprising MIT student fueled by a deep passion for computer science, cybersecurity, and a relentless pursuit of knowledge. Currently pursuing majors in Computer Science & Artificial Intelligence and Business Analytics, while exploring other fields with minors in Mathematics and Music.<br><br>
+            <section id="bio" class="section hero">
+                <div class="hero-stack">
+                    <header class="hero-name">
+                        <h1>sri saraf</h1>
+                    </header>
+                    <!-- <hr class="hero-rule" aria-hidden="true"> -->
+                    <div class="hero-bio">
+                        <p>
+                            Current MIT MEng student fueled by a relentless pursuit of knowledge. During my MIT undergrad, I completed my B.S. in Computer Science & AI and B.S. in Business Analytics along with minors in Mathematics and Music.<br><br>
 
-Beyond the realm of coding and digital defense, I find joy in the power of words and the art of expression, sharing thoughts through writing, music, and public speaking. Combining my technical expertise with my innate desire to make a positive impact, I strive to help others harness the power of technology to achieve their goals. Whether it's assisting individuals in overcoming challenges or collaborating on projects that drive innovation, I am dedicated to creating meaningful connections and fostering a supportive community.
-                </p>
+                            I find joy in the arts of expression, with a focus on writing and music. I value collaboration and building meaningful connections. Today, I intern at Notion as a software engineer, write my blog, and work on building games!
+                        </p>
+                    </div>
+                </div>
             </section>
             <section id="research" class="section">
                 <h2>research</h2>

@@ -313,6 +313,241 @@ header h1 a {
     color: inherit;
 }
 
+/* Landing page */
+body.home .container {
+    padding-right: clamp(3.5rem, 8vw, 5.5rem);
+}
+
+body.home .hero {
+    min-height: calc(100dvh - 2rem);
+    min-height: calc(100vh - 2rem);
+    display: flex;
+    align-items: center;
+    padding: 3.5rem 0 4rem;
+    margin-bottom: 0;
+    box-sizing: border-box;
+}
+
+body.home .hero-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.35rem;
+    width: 100%;
+    max-width: 40rem;
+}
+
+body.home .hero-name {
+    text-align: left;
+    padding: 0;
+    margin: 0;
+}
+
+body.home .hero-name h1 {
+    font-family: 'Adobe Caslon Italic', serif;
+    font-style: italic;
+    letter-spacing: 0.06rem;
+    font-size: clamp(2.85rem, 8vw, 4.25rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--accent-color);
+    margin: 0;
+}
+
+body.home .hero-rule {
+    border: none;
+    height: 1px;
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(
+        90deg,
+        var(--accent-color) 0%,
+        rgba(224, 224, 224, 0.35) 45%,
+        transparent 100%
+    );
+}
+
+body.home .hero-bio {
+    padding: 0;
+}
+
+body.home .hero-bio p {
+    font-size: 1.02rem;
+    line-height: 1.72;
+    color: var(--text-color);
+    font-weight: 300;
+    max-width: none;
+}
+
+body.home main > .section:not(.hero) {
+    padding-top: 1.5rem;
+    padding-bottom: 2rem;
+}
+
+body.home .section-subtitle {
+    max-width: 42rem;
+}
+
+body.home .link-container {
+    margin-top: 0.75rem;
+}
+
+/* Right section rail */
+body.home .home-section-rail {
+    position: fixed;
+    right: clamp(1rem, 3vw, 2rem);
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 999;
+    pointer-events: none;
+}
+
+body.home .section-rail-labels {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 1.35rem;
+    pointer-events: auto;
+}
+
+body.home .section-rail-label {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-family: 'Adobe Caslon Italic', serif;
+    font-style: italic;
+    font-size: 1rem;
+    letter-spacing: 0.08em;
+    text-transform: none;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    color: rgba(224, 224, 224, 0.35);
+    transition: color 0.35s ease;
+}
+
+body.home .section-rail-label:hover {
+    color: var(--secondary-text);
+}
+
+body.home .section-rail-label.active {
+    color: var(--accent-color);
+}
+
+/* Home bubbles — flipped: pool at bottom, accent on scroll at top */
+body.home .bubble-1 {
+    top: auto;
+    bottom: -250px;
+    left: -250px;
+}
+
+body.home .bubble-2 {
+    top: auto;
+    bottom: -300px;
+    right: -300px;
+}
+
+body.home .bubble-3 {
+    top: auto;
+    bottom: -420px;
+    left: -100px;
+}
+
+body.home .bubble-4 {
+    top: auto;
+    bottom: -300px;
+    right: -50px;
+}
+
+body.home .bubble-5 {
+    top: auto;
+    bottom: -380px;
+    left: 500px;
+}
+
+body.home .bubble-6 {
+    top: auto;
+    bottom: -420px;
+    left: 200px;
+}
+
+body.home .bubble-7 {
+    top: auto;
+    bottom: -420px;
+    right: 200px;
+}
+
+body.home .bubble2 {
+    opacity: 0;
+    bottom: auto;
+}
+
+body.home .bubble-8 {
+    bottom: auto;
+    top: -200px;
+    right: -350px;
+}
+
+body.home .bubble-9 {
+    bottom: auto;
+    top: -200px;
+    left: -350px;
+}
+
+body.home .bubble-10 {
+    bottom: auto;
+    top: 100px;
+    right: -350px;
+}
+
+body.home .bubble-11 {
+    bottom: auto;
+    top: 0;
+    left: -350px;
+}
+
+body.home .bubble-12 {
+    bottom: auto;
+    top: 50px;
+    left: -380px;
+}
+
+body.home .bubble2.visible {
+    opacity: 0.9;
+}
+
+body.home .bubbles.scrolled .bubble:not(.bubble2) {
+    opacity: 0.15;
+}
+
+body.home .mobile-bubble {
+    background: linear-gradient(0deg, var(--hover-color), var(--hover-color-2));
+    opacity: 0.3;
+}
+
+body.home .bubbles > div {
+    will-change: auto;
+    transition: opacity 0.8s ease-out;
+}
+
+@media (max-width: 768px) {
+    body.home .container {
+        padding-right: 2.5rem;
+    }
+
+    body.home .hero {
+        min-height: auto;
+        padding: 2.5rem 0 2rem;
+    }
+
+    body.home .hero-name h1 {
+        font-size: clamp(2.25rem, 11vw, 3rem);
+    }
+
+    body.home .home-section-rail {
+        display: none;
+    }
+}
+
 #research .projects {
     flex-direction: column;
 }
