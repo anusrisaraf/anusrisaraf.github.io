@@ -55,6 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     const subtleNav = document.querySelector('.subtle-nav');
 
+    function usesDotNav() {
+        return subtleNav && (!isHome || window.innerWidth <= 768);
+    }
+
     function scrollToSection(sectionId) {
         const section = document.getElementById(sectionId);
         if (section) {
@@ -81,9 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
         let currentSectionId = '';
         const viewportScroll = window.scrollY + window.innerHeight / 3;
 
-        if (subtleNav && !isHome && window.scrollY > 100) {
+        if (usesDotNav() && window.scrollY > 100) {
             subtleNav.classList.add('visible');
-        } else if (subtleNav && !isHome) {
+        } else if (usesDotNav()) {
+            subtleNav.classList.remove('visible');
+        } else if (subtleNav) {
             subtleNav.classList.remove('visible');
         }
 
@@ -119,13 +125,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let scrollTimer;
     window.addEventListener('scroll', function() {
-        if (isHome) {
+        if (!usesDotNav()) {
             return;
         }
 
         clearTimeout(scrollTimer);
 
-        if (window.scrollY > 100 && subtleNav) {
+        if (window.scrollY > 100) {
             subtleNav.classList.add('visible');
 
             scrollTimer = setTimeout(function() {
