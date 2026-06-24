@@ -314,18 +314,16 @@ header h1 a {
 }
 
 /* Landing page */
-body.home .container {
-    padding-right: clamp(3.5rem, 8vw, 5.5rem);
+body.home .home-legacy-header {
+    display: none;
 }
 
-body.home .hero {
-    min-height: calc(100dvh - 2rem);
-    min-height: calc(100vh - 2rem);
-    display: flex;
-    align-items: center;
-    padding: 3.5rem 0 4rem;
-    margin-bottom: 0;
-    box-sizing: border-box;
+body.home .subtle-nav {
+    display: none;
+}
+
+body.home .container {
+    padding-right: clamp(3.5rem, 8vw, 5.5rem);
 }
 
 body.home .hero-stack {
@@ -433,118 +431,159 @@ body.home .section-rail-label.active {
     color: var(--accent-color);
 }
 
-/* Home bubbles — flipped: pool at bottom, accent on scroll at top */
-body.home .bubble-1 {
-    top: auto;
-    bottom: -250px;
-    left: -250px;
-}
+@media (min-width: 769px) {
+    body.home .hero {
+        min-height: calc(100dvh - 2rem);
+        min-height: calc(100vh - 2rem);
+        display: flex;
+        align-items: center;
+        padding: 3.5rem 0 4rem;
+        margin-bottom: 0;
+        box-sizing: border-box;
+    }
 
-body.home .bubble-2 {
-    top: auto;
-    bottom: -300px;
-    right: -300px;
-}
+    /* Home bubbles — flipped: pool at bottom, accent on scroll at top */
+    body.home .bubble-1 {
+        top: auto;
+        bottom: -250px;
+        left: -250px;
+    }
 
-body.home .bubble-3 {
-    top: auto;
-    bottom: -420px;
-    left: -100px;
-}
+    body.home .bubble-2 {
+        top: auto;
+        bottom: -300px;
+        right: -300px;
+    }
 
-body.home .bubble-4 {
-    top: auto;
-    bottom: -300px;
-    right: -50px;
-}
+    body.home .bubble-3 {
+        top: auto;
+        bottom: -420px;
+        left: -100px;
+    }
 
-body.home .bubble-5 {
-    top: auto;
-    bottom: -380px;
-    left: 500px;
-}
+    body.home .bubble-4 {
+        top: auto;
+        bottom: -300px;
+        right: -50px;
+    }
 
-body.home .bubble-6 {
-    top: auto;
-    bottom: -420px;
-    left: 200px;
-}
+    body.home .bubble-5 {
+        top: auto;
+        bottom: -380px;
+        left: 500px;
+    }
 
-body.home .bubble-7 {
-    top: auto;
-    bottom: -420px;
-    right: 200px;
-}
+    body.home .bubble-6 {
+        top: auto;
+        bottom: -420px;
+        left: 200px;
+    }
 
-body.home .bubble2 {
-    opacity: 0;
-    bottom: auto;
-}
+    body.home .bubble-7 {
+        top: auto;
+        bottom: -420px;
+        right: 200px;
+    }
 
-body.home .bubble-8 {
-    bottom: auto;
-    top: -200px;
-    right: -350px;
-}
+    body.home .bubble2 {
+        opacity: 0;
+        bottom: auto;
+    }
 
-body.home .bubble-9 {
-    bottom: auto;
-    top: -200px;
-    left: -350px;
-}
+    body.home .bubble-8 {
+        bottom: auto;
+        top: -200px;
+        right: -350px;
+    }
 
-body.home .bubble-10 {
-    bottom: auto;
-    top: 100px;
-    right: -350px;
-}
+    body.home .bubble-9 {
+        bottom: auto;
+        top: -200px;
+        left: -350px;
+    }
 
-body.home .bubble-11 {
-    bottom: auto;
-    top: 0;
-    left: -350px;
-}
+    body.home .bubble-10 {
+        bottom: auto;
+        top: 100px;
+        right: -350px;
+    }
 
-body.home .bubble-12 {
-    bottom: auto;
-    top: 50px;
-    left: -380px;
-}
+    body.home .bubble-11 {
+        bottom: auto;
+        top: 0;
+        left: -350px;
+    }
 
-body.home .bubble2.visible {
-    opacity: 0.9;
-}
+    body.home .bubble-12 {
+        bottom: auto;
+        top: 50px;
+        left: -380px;
+    }
 
-body.home .bubbles.scrolled .bubble:not(.bubble2) {
-    opacity: 0.15;
-}
+    body.home .bubble2.visible {
+        opacity: 0.9;
+    }
 
-body.home .mobile-bubble {
-    background: linear-gradient(0deg, var(--hover-color), var(--hover-color-2));
-    opacity: 0.3;
-}
+    body.home .bubbles.scrolled .bubble:not(.bubble2) {
+        opacity: 0.15;
+    }
 
-body.home .bubbles > div {
-    will-change: auto;
-    transition: opacity 0.8s ease-out;
+    body.home .mobile-bubble {
+        background: linear-gradient(0deg, var(--hover-color), var(--hover-color-2));
+        opacity: 0.3;
+    }
+
+    body.home .bubbles > div {
+        will-change: auto;
+        transition: opacity 0.8s ease-out;
+    }
 }
 
 @media (max-width: 768px) {
     body.home .container {
-        padding-right: 2.5rem;
+        padding: 1rem;
+    }
+
+    body.home .home-legacy-header {
+        display: block;
+    }
+
+    body.home .home-legacy-header h1 {
+        font-family: 'Adobe Caslon Italic', serif;
+        font-style: italic;
+        letter-spacing: 0.08rem;
+        font-size: 4rem;
+        font-weight: 300;
+        color: var(--accent-color);
+        margin: 1rem 0;
+    }
+
+    body.home .hero-name {
+        display: none;
     }
 
     body.home .hero {
         min-height: auto;
-        padding: 2.5rem 0 2rem;
+        padding: 0;
+        margin-bottom: 0;
     }
 
-    body.home .hero-name h1 {
-        font-size: clamp(2.25rem, 11vw, 3rem);
+    body.home .hero-stack {
+        gap: 0;
+        max-width: none;
+    }
+
+    body.home .hero-bio p {
+        font-size: inherit;
+        line-height: inherit;
     }
 
     body.home .home-section-rail {
         display: none;
+    }
+
+    body.home .subtle-nav {
+        display: flex;
     }
 }
 
